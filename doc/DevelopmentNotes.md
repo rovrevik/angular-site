@@ -145,6 +145,10 @@ Add font-awesome override to bower.json to keep wiredep from removing the includ
 Execute `grunt wiredep` to add font-awesome in the required files.
 Add an example for using font awesome. [Basic Icons](https://fortawesome.github.io/Font-Awesome/examples/#basic)
 
+## Add Proxy support
+Add grunt connect proxy with `npm install grunt-connect-proxy --save-dev`
+Add grunt-connect-proxy configuration to proxy api urls.
+
 ## Documentation and Reference
 - [Node.js](https://nodejs.org/en/docs/)
 - [npm](https://docs.npmjs.com/)
@@ -160,6 +164,7 @@ Add an example for using font awesome. [Basic Icons](https://fortawesome.github.
 - [Jasmine](http://jasmine.github.io/2.4/introduction.html)
 - [Protractor](http://www.protractortest.org/#/)
 - [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
+- [grunt-connect-proxy](https://github.com/drewzboto/grunt-connect-proxy)
 - [JSHint](http://jshint.com/docs/)
 - [JSCS](http://jscs.info/overview)
 

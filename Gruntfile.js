@@ -12,8 +12,11 @@ module.exports = function (grunt) {
   // Time how long tasks take. Can help when optimizing build times
   require('time-grunt')(grunt);
 
+  // Don't need this with jit-grunt below. grunt.loadNpmTasks('grunt-connect-proxy');
+
   // Automatically load required Grunt tasks
   require('jit-grunt')(grunt, {
+    configureProxies: 'grunt-connect-proxy',
     useminPrepare: 'grunt-usemin',
     ngtemplates: 'grunt-angular-templates',
     cdnify: 'grunt-google-cdn'
@@ -79,11 +82,22 @@ module.exports = function (grunt) {
         hostname: 'localhost',
         livereload: 35729
       },
+      proxies: [{
+        context: '/api',
+        host: 'localhost',
+        port: 8080,
+        https: false,
+        xforward: false,
+        rewrite: {
+          '^/api': ''
+        }
+      }],
       livereload: {
         options: {
           open: true,
           middleware: function (connect) {
             return [
+              require('grunt-connect-proxy/lib/utils').proxyRequest,
               connect.static('.tmp'),
               connect().use(
                 '/bower_components',
@@ -440,6 +454,7 @@ module.exports = function (grunt) {
       'clean:server',
       'wiredep',
       'concurrent:server',
+      'configureProxies:server',
       'postcss:server',
       'connect:livereload',
       'watch'
