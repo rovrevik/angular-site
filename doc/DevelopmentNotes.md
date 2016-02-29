@@ -134,6 +134,9 @@ Add jshint configuration for protractor. https://github.com/angular/protractor/b
 bower install angular-bootstrap --save
 ```
 Add UI Bootstrap/angular-bootstrap with `bower install angular-bootstrap --save`
+Execute `grunt wiredep` to add ui-bootstrap in the required files.
+
+[AngularUI](https://angular-ui.github.io/)
 
 ## Documentation and Reference
 - [Node.js](https://nodejs.org/en/docs/)
