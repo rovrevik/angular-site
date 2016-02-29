@@ -41,6 +41,8 @@
   },
   "scripts": {
     "install": "node ./node_modules/protractor/bin/webdriver-manager update",
-    "test": "karma start test/karma.conf.js"
+    "test": "karma start test/karma.conf.js",
+    "webdriver": "webdriver-manager start",
+    "protractor": "protractor protractor.conf.js"
   }
 }
