@@ -44,9 +44,13 @@ module.exports = function (grunt) {
           livereload: '<%= connect.options.livereload %>'
         }
       },
+      jsTestCheck: {
+        files: ['test/spec/{,*/}*.js', 'test/e2e-spec/{,*/}*.js'],
+        tasks: ['newer:jshint:test', 'newer:jscs:test']
+      },
       jsTest: {
-        files: ['test/spec/{,*/}*.js'],
-        tasks: ['newer:jshint:test', 'newer:jscs:test', 'karma']
+        files: ['test/spec/{,*/}*.js', 'test/e2e-spec/{,*/}*.js'],
+        tasks: ['karma']
       },
       styles: {
         files: ['<%= yeoman.app %>/styles/{,*/}*.css'],
@@ -134,7 +138,7 @@ module.exports = function (grunt) {
         options: {
           jshintrc: 'test/.jshintrc'
         },
-        src: ['test/spec/{,*/}*.js']
+        src: ['test/spec/{,*/}*.js', 'test/e2e-spec/{,*/}*.js']
       }
     },
 
@@ -151,7 +155,7 @@ module.exports = function (grunt) {
         ]
       },
       test: {
-        src: ['test/spec/{,*/}*.js']
+        src: ['test/spec/{,*/}*.js', 'test/e2e-spec/{,*/}*.js']
       }
     },
 
@@ -220,7 +224,7 @@ module.exports = function (grunt) {
             }
           }
       }
-    }, 
+    },
 
     // Renames files for browser caching purposes
     filerev: {

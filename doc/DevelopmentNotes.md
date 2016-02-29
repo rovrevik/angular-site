@@ -32,6 +32,7 @@ Website Application
   npm install -g yo # CLI tool for running Yeoman generators
   npm install -g generator-angular # Yeoman generator for AngularJS
   npm install -g generator-karma # Yeoman generator for Karma
+  npm install -g generator-protractor # Yeoman generator for Protractor
   ```
 
 ### npm module installation warnings
@@ -67,28 +68,63 @@ Website Application
   npm WARN deprecated native-or-bluebird@1.2.0: please use 'any-promise' instead
   ```
 
-  ### Generate the application scaffolding using `yo angular site`.
-  - Stick with the defaults for the most part.
-  - Use Grunt instead of Gulp.
-  - Don't use Sass (with Compass)
-  - Include Bootstrap
-  - AngularJS modules included
+## Generate the application scaffolding.
+```bash
+yo angular site
+```
+
+Stick with the defaults for the most part.
+
+- Use Grunt instead of Gulp.
+- Don't use Sass (with Compass)
+- Include Bootstrap
+- AngularJS modules included
     - angular-animate.js
     - angular-cookies.js
     - angular-resource.js
     - angular-route.js
     - angular-sanitize.js
     - angular-touch.js
-  - AngularJS modules excluded
+- AngularJS modules excluded
     - angular-aria.js
     - angular-messages.js
-  - Overwrite README.md
+- Overwrite README.md
 
-Update bower.json to use tilde version ranges.
+### Update bower.json to use tilde version ranges for angular and bootstrap.
 - "angular": "^1.4.0" will pull down 1.5.0
 - Only allow patch-level changes.
 - Use the highest Angular 1.4 version available instead of the highest version over 1.4. `^1.4.0` changed to `~1.4.0`
 - Use the highest Bootstrap 3.2 version available instead of the highest version over 3.2. `^3.2.0` changed to `~3.2.0`
+
+## Set up e2e testing with the Yeoman Protractor Generator
+- [e2e Testing](https://code.angularjs.org/1.5.0/docs/guide/e2e-testing)
+```bash
+npm install -g generator-protractor
+yo protractor
+```
+
+Stick with the defaults.
+The generator overwrites the package.json so it needs to be manually merged.
+Add e2e entries for the scripts section of the package.json file.
+```json
+"scripts": {
+  "webdriver": "webdriver-manager start",
+  "protractor": "protractor protractor.conf.js"
+}
+```
+
+Add directConnect: true to the protractor config file so that a selenium server doesn't need to be running.
+https://github.com/angular/protractor/blob/master/docs/server-setup.md
+
+### Colocate e2e Protractor test support with the unit test support created by the Yeoman AngularJS generator.
+The existing test directory was created by the Yeoman AngularJS generator.
+Move protractor.conf.js and README.txt from the project root directory into the test directory.
+Change paths for moved protractor files.
+Rename protractor spec directory to e2e-spec.
+Move the example protractor e2e-spec directory from the project directory into the test directory.
+Add test/e2e-spec patterns to Gruntfile for jshint and jscs.
+Rework watch to separate tasks for checking all tests but only executing karma for unit test.
+Add jshint configuration for protractor. https://github.com/angular/protractor/blob/master/spec/.jshintrc
 
 ## Documentation and Reference
 - [Node.js](https://nodejs.org/en/docs/)
@@ -101,6 +137,12 @@ Update bower.json to use tilde version ranges.
 - [Karma generator](https://github.com/yeoman/generator-karma)
 - [Karma](http://karma-runner.github.io/)
 - [AngularJS](https://docs.angularjs.org/guide)
+- [PhantomJS](http://phantomjs.org/documentation/)
+- [Jasmine](http://jasmine.github.io/2.4/introduction.html)
+- [Protractor](http://www.protractortest.org/#/)
+- [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
+- [JSHint](http://jshint.com/docs/)
+- [JSCS](http://jscs.info/overview)
 
 - [nvm](https://github.com/creationix/nvm) (Node Version Manager)
 - [n](https://github.com/tj/n)

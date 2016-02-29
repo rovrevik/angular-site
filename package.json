@@ -1,6 +1,7 @@
 {
   "name": "site",
   "private": true,
+  "version": "0.0.1",
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
     "grunt": "^0.4.5",
@@ -35,9 +36,13 @@
     "time-grunt": "^1.0.0"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=0.10.0",
+    "protractor": "3.0.0"
   },
   "scripts": {
-    "test": "karma start test/karma.conf.js"
+    "install": "node ./node_modules/protractor/bin/webdriver-manager update",
+    "test": "karma start test/karma.conf.js",
+    "webdriver": "webdriver-manager start",
+    "protractor": "protractor test/protractor.conf.js"
   }
 }
