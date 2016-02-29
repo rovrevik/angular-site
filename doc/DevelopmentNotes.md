@@ -110,6 +110,9 @@ Relocate protractor config and readme files.
 Change paths for moved protractor files.
 Rename protractor spec directory to e2e-spec.
 Move the example protractor e2e-spec directory from the project directory into the test directory.
+Add test/e2e-spec patterns to Gruntfile for jshint and jscs.
+Rework watch to separate tasks for checking all tests but only executing karma for unit test.
+Add jshint configuration for protractor.
 
 >How to run the tests:
 >
