@@ -84,6 +84,12 @@ Website Application
     - angular-messages.js
   - Overwrite README.md
 
+Update bower.json to use tilde version ranges.
+- "angular": "^1.4.0" will pull down 1.5.0
+- Only allow patch-level changes.
+- Use the highest Angular 1.4 version available instead of the highest version over 1.4. `^1.4.0` changed to `~1.4.0`
+- Use the highest Bootstrap 3.2 version available instead of the highest version over 3.2. `^3.2.0` changed to `~3.2.0`
+
 ## Documentation and Reference
 - [Node.js](https://nodejs.org/en/docs/)
 - [npm](https://docs.npmjs.com/)
