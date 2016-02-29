@@ -141,7 +141,7 @@ Add an example for using ui-bootstrap. http://angular-ui.github.io/bootstrap/#bu
 
 ## Add Font Awesome
 Add font awesome with `bower install font-awesome --save`
-Add font-awesome override to bower.json to keep wiredep from removing the include.
+Add font-awesome override to bower.json to keep wiredep from removing the include. http://stackoverflow.com/questions/32308003/grunt-wiredep-not-injecting-font-awesome
 Execute `grunt wiredep` to add font-awesome in the required files.
 Add an example for using font awesome. [Basic Icons](https://fortawesome.github.io/Font-Awesome/examples/#basic)
 
