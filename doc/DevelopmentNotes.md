@@ -107,6 +107,7 @@ The generator overwrites the package.json so it needs to be manually merged.
 Add npm scripts for running e2e tests.
 Add directConnect: true to the protractor config file so that a selenium server doesn't need to be running.
 Relocate protractor config and readme files.
+Change paths for moved protractor files
 
 >How to run the tests:
 >
