@@ -2,6 +2,9 @@ exports.config = {
   // The address of a running selenium server.
   seleniumAddress: 'http://localhost:4444/wd/hub',
 
+  // Add so that a selenium server doesn't need to be running.
+  directConnect: true,
+
   // Spec patterns are relative to the location of this config.
   specs: [
     'spec/*_spec.js'

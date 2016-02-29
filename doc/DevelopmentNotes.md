@@ -32,6 +32,7 @@ Website Application
   npm install -g yo # CLI tool for running Yeoman generators
   npm install -g generator-angular # Yeoman generator for AngularJS
   npm install -g generator-karma # Yeoman generator for Karma
+  npm install -g generator-protractor # Yeoman generator for Protractor
   ```
 
 ### npm module installation warnings
@@ -104,6 +105,7 @@ yo protractor
 Stick with the defaults.
 The generator overwrites the package.json so it needs to be manually merged.
 Add npm scripts for running e2e tests.
+Add directConnect: true to the protractor config file so that a selenium server doesn't need to be running.
 
 >How to run the tests:
 >
