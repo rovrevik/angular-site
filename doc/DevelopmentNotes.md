@@ -67,28 +67,53 @@ Website Application
   npm WARN deprecated native-or-bluebird@1.2.0: please use 'any-promise' instead
   ```
 
-  ### Generate the application scaffolding using `yo angular site`.
-  - Stick with the defaults for the most part.
-  - Use Grunt instead of Gulp.
-  - Don't use Sass (with Compass)
-  - Include Bootstrap
-  - AngularJS modules included
+## Generate the application scaffolding.
+```bash
+yo angular site
+```
+
+Stick with the defaults for the most part.
+
+- Use Grunt instead of Gulp.
+- Don't use Sass (with Compass)
+- Include Bootstrap
+- AngularJS modules included
     - angular-animate.js
     - angular-cookies.js
     - angular-resource.js
     - angular-route.js
     - angular-sanitize.js
     - angular-touch.js
-  - AngularJS modules excluded
+- AngularJS modules excluded
     - angular-aria.js
     - angular-messages.js
-  - Overwrite README.md
+- Overwrite README.md
 
-Update bower.json to use tilde version ranges.
+### Update bower.json to use tilde version ranges for angular and bootstrap.
 - "angular": "^1.4.0" will pull down 1.5.0
 - Only allow patch-level changes.
 - Use the highest Angular 1.4 version available instead of the highest version over 1.4. `^1.4.0` changed to `~1.4.0`
 - Use the highest Bootstrap 3.2 version available instead of the highest version over 3.2. `^3.2.0` changed to `~3.2.0`
+
+## Set up E2E testing with the Yeoman Protractor Generator
+```bash
+npm install -g generator-protractor
+yo protractor
+```
+
+Stick with the defaults.
+The generator overwrites the package.json so it needs to be manually merged.
+Add npm scripts for running e2e tests.
+
+>How to run the tests:
+>
+>1. Start the Selenium server:
+>./node_modules/.bin/webdriver-manager start
+>
+>2. Open a new terminal and run Protractor:
+>./node_modules/.bin/protractor protractor.conf.js
+
+- [E2E Testing](https://code.angularjs.org/1.5.0/docs/guide/e2e-testing)
 
 ## Documentation and Reference
 - [Node.js](https://nodejs.org/en/docs/)
@@ -101,6 +126,9 @@ Update bower.json to use tilde version ranges.
 - [Karma generator](https://github.com/yeoman/generator-karma)
 - [Karma](http://karma-runner.github.io/)
 - [AngularJS](https://docs.angularjs.org/guide)
+- [PhantomJS](http://phantomjs.org/documentation/)
+- [Jasmine](http://jasmine.github.io/2.4/introduction.html)
+- [Protractor](http://www.protractortest.org/#/)
 
 - [nvm](https://github.com/creationix/nvm) (Node Version Manager)
 - [n](https://github.com/tj/n)
