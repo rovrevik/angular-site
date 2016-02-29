@@ -96,7 +96,8 @@ Stick with the defaults for the most part.
 - Use the highest Angular 1.4 version available instead of the highest version over 1.4. `^1.4.0` changed to `~1.4.0`
 - Use the highest Bootstrap 3.2 version available instead of the highest version over 3.2. `^3.2.0` changed to `~3.2.0`
 
-## Set up E2E testing with the Yeoman Protractor Generator
+## Set up e2e testing with the Yeoman Protractor Generator
+- [e2e Testing](https://code.angularjs.org/1.5.0/docs/guide/e2e-testing)
 ```bash
 npm install -g generator-protractor
 yo protractor
@@ -104,25 +105,26 @@ yo protractor
 
 Stick with the defaults.
 The generator overwrites the package.json so it needs to be manually merged.
-Add npm scripts for running e2e tests.
+Add e2e entries for the scripts section of the package.json file.
+```json
+"scripts": {
+  "webdriver": "webdriver-manager start",
+  "protractor": "protractor protractor.conf.js"
+}
+```
+
 Add directConnect: true to the protractor config file so that a selenium server doesn't need to be running.
-Relocate protractor config and readme files.
+https://github.com/angular/protractor/blob/master/docs/server-setup.md
+
+### Colocate e2e Protractor test support with the unit test support created by the Yeoman AngularJS generator.
+The existing test directory was created by the Yeoman AngularJS generator.
+Move protractor.conf.js and README.txt from the project root directory into the test directory.
 Change paths for moved protractor files.
 Rename protractor spec directory to e2e-spec.
 Move the example protractor e2e-spec directory from the project directory into the test directory.
 Add test/e2e-spec patterns to Gruntfile for jshint and jscs.
 Rework watch to separate tasks for checking all tests but only executing karma for unit test.
-Add jshint configuration for protractor.
-
->How to run the tests:
->
->1. Start the Selenium server:
->./node_modules/.bin/webdriver-manager start
->
->2. Open a new terminal and run Protractor:
->./node_modules/.bin/protractor protractor.conf.js
-
-- [E2E Testing](https://code.angularjs.org/1.5.0/docs/guide/e2e-testing)
+Add jshint configuration for protractor. https://github.com/angular/protractor/blob/master/spec/.jshintrc
 
 ## Documentation and Reference
 - [Node.js](https://nodejs.org/en/docs/)
@@ -138,6 +140,9 @@ Add jshint configuration for protractor.
 - [PhantomJS](http://phantomjs.org/documentation/)
 - [Jasmine](http://jasmine.github.io/2.4/introduction.html)
 - [Protractor](http://www.protractortest.org/#/)
+- [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
+- [JSHint](http://jshint.com/docs/)
+- [JSCS](http://jscs.info/overview)
 
 - [nvm](https://github.com/creationix/nvm) (Node Version Manager)
 - [n](https://github.com/tj/n)
