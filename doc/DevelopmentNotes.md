@@ -147,7 +147,7 @@ Add an example for using font awesome. [Basic Icons](https://fortawesome.github.
 
 ## Add Proxy support
 Add grunt connect proxy with `npm install grunt-connect-proxy --save-dev`
-Add grunt-connect-proxy configuration to proxy api urls.
+Add grunt-connect-proxy configuration to the Gruntfile to proxy api urls.
 
 ## Documentation and Reference
 - [Node.js](https://nodejs.org/en/docs/)
