@@ -139,6 +139,11 @@ Add example of using ui-bootstrap. http://angular-ui.github.io/bootstrap/#button
 
 [AngularUI](https://angular-ui.github.io/)
 
+## Add Font Awesome
+Add font awesome with `bower install font-awesome --save`
+Add font-awesome override to bower.json to keep wiredep from removing the include.
+Execute `grunt wiredep` to add font-awesome in the required files.
+
 ## Documentation and Reference
 - [Node.js](https://nodejs.org/en/docs/)
 - [npm](https://docs.npmjs.com/)
@@ -159,6 +164,7 @@ Add example of using ui-bootstrap. http://angular-ui.github.io/bootstrap/#button
 
 - [AngularJS](https://docs.angularjs.org/guide)
 - [UI Bootstrap](https://angular-ui.github.io/bootstrap/)
+- [Font Awesome](https://fortawesome.github.io/Font-Awesome/)
 
 - [nvm](https://github.com/creationix/nvm) (Node Version Manager)
 - [n](https://github.com/tj/n)
