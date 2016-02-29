@@ -109,6 +109,7 @@ Add directConnect: true to the protractor config file so that a selenium server 
 Relocate protractor config and readme files.
 Change paths for moved protractor files.
 Rename protractor spec directory to e2e-spec.
+Move the example protractor e2e-spec directory from the project directory into the test directory.
 
 >How to run the tests:
 >
