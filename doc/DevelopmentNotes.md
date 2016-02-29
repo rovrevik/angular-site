@@ -152,9 +152,9 @@ Add grunt-connect-proxy configuration to the Gruntfile to proxy api urls.
 ## Documentation and Reference
 - [Node.js](https://nodejs.org/en/docs/)
 - [npm](https://docs.npmjs.com/)
-- [Bower](http://bower.io/)
 - [GRUNT](http://gruntjs.com/getting-started)
 - [Gulp](https://github.com/gulpjs/gulp/blob/master/docs/getting-started.md)
+- [Bower](http://bower.io/)
 - [Yeoman](http://yeoman.io/learning/)
 - [AngularJS generator](https://github.com/yeoman/generator-angular)
 - [Karma generator](https://github.com/yeoman/generator-karma)
