@@ -126,6 +126,15 @@ Add test/e2e-spec patterns to Gruntfile for jshint and jscs.
 Rework watch to separate tasks for checking all tests but only executing karma for unit test.
 Add jshint configuration for protractor. https://github.com/angular/protractor/blob/master/spec/.jshintrc
 
+## Add UI Bootstrap/angular-bootstrap
+[angular-bootstrap](https://github.com/angular-ui/bootstrap-bower) is a bower repository to hold Angular UI Bootstrap releases
+[angular-ui-bootstrap-bower](https:github.com/angular-ui/bootstrap-bower) is a bower repository to hold Angular UI Bootstrap releases.
+[angular-ui-bootstrap](https:github.com/angular-ui/bootstrap.git) Note: do not install 'angular-ui-bootstrap'.
+```bash
+bower install angular-bootstrap --save
+```
+Add UI Bootstrap/angular-bootstrap with `bower install angular-bootstrap --save`
+
 ## Documentation and Reference
 - [Node.js](https://nodejs.org/en/docs/)
 - [npm](https://docs.npmjs.com/)
@@ -135,14 +144,17 @@ Add jshint configuration for protractor. https://github.com/angular/protractor/b
 - [Yeoman](http://yeoman.io/learning/)
 - [AngularJS generator](https://github.com/yeoman/generator-angular)
 - [Karma generator](https://github.com/yeoman/generator-karma)
+- [Protractor generator](https://github.com/andresdominguez/generator-protractor)
 - [Karma](http://karma-runner.github.io/)
-- [AngularJS](https://docs.angularjs.org/guide)
 - [PhantomJS](http://phantomjs.org/documentation/)
 - [Jasmine](http://jasmine.github.io/2.4/introduction.html)
 - [Protractor](http://www.protractortest.org/#/)
 - [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
 - [JSHint](http://jshint.com/docs/)
 - [JSCS](http://jscs.info/overview)
+
+- [AngularJS](https://docs.angularjs.org/guide)
+- [UI Bootstrap](https://angular-ui.github.io/bootstrap/)
 
 - [nvm](https://github.com/creationix/nvm) (Node Version Manager)
 - [n](https://github.com/tj/n)
