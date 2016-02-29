@@ -135,6 +135,7 @@ bower install angular-bootstrap --save
 ```
 Add UI Bootstrap/angular-bootstrap with `bower install angular-bootstrap --save`
 Execute `grunt wiredep` to add ui-bootstrap in the required files.
+Add example of using ui-bootstrap. http://angular-ui.github.io/bootstrap/#buttons
 
 [AngularUI](https://angular-ui.github.io/)
 
