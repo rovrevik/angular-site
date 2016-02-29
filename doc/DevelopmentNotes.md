@@ -1,5 +1,5 @@
-Big Ears Website
-================
+Website Application
+===================
 
 - Create the project directory.
 - Initialize the directory for git and for using git-flow.
@@ -66,6 +66,23 @@ Big Ears Website
   ```
   npm WARN deprecated native-or-bluebird@1.2.0: please use 'any-promise' instead
   ```
+
+  ### Generate the application scaffolding using `yo angular site`.
+  - Stick with the defaults for the most part.
+  - Use Grunt instead of Gulp.
+  - Don't use Sass (with Compass)
+  - Include Bootstrap
+  - AngularJS modules included
+    - angular-animate.js
+    - angular-cookies.js
+    - angular-resource.js
+    - angular-route.js
+    - angular-sanitize.js
+    - angular-touch.js
+  - AngularJS modules excluded
+    - angular-aria.js
+    - angular-messages.js
+  - Overwrite README.md
 
 ## Documentation and Reference
 - [Node.js](https://nodejs.org/en/docs/)
