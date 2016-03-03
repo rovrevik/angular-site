@@ -182,8 +182,20 @@ Uninstalling bootstrap and installing the bootstrap-sass-official bower componen
   - Wiredep replaces the bootstrap.js script element with the included scripts from bootstrap-sass-official.
 
 ### Merge changes over from a freshly generated Yeoman AngularJS app.
+Replace the default main.css with main.scss. *One could rename the main.css to keep it for reference but, why? That is what version control is for.*
+Merge over Gruntfile changes for sass and compass.
+
+Most tasks expect their configuration to be specified in a property of the same name.
+A task configuration may have options and targets.
+
+- Add a compass target to the watch task configuration for regenerating css from sass and scss files.
+- Add a sass target to the wiredep task configuration.
+- Add a new compass task configuration with dist and server targets.
+- Add a files entry to the dist target of the copy task configuration for bootstrap fonts.
+- Add concurrent compass targets to the server, test and dist targets of the concurrent task configuration.
 
 ### Convert over to a solution that does not depend on Ruby and Compass.
+TODO
 
 [Libsass](http://sass-lang.com/libsass)
 `brew install libsass`
