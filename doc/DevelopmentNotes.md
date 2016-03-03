@@ -149,6 +149,46 @@ Add an example for using font awesome. [Basic Icons](https://fortawesome.github.
 Add grunt connect proxy with `npm install grunt-connect-proxy --save-dev`
 Add grunt-connect-proxy configuration to the Gruntfile to proxy api urls.
 
+
+## CSS Preprocessors
+### Get it working with compass first.
+### Get Ruby going nicely
+- Update RVM if neccessary.
+`rvm -v # reports if it is the latest version`
+- RVM complains it it is not first in the PATH. *But, so does sdkman and nvm.* 
+`echo $PATH`
+- List the gemset and gems. `rvm gemset list`
+- Create .ruby-version and .ruby-gemset files using correct ruby version when changing into the project directory
+`rvm --create --ruby-version use 2.1.1@site`
+
+### Install compass
+`gem install compass`
+
+### Replace bootstrap with bootstrap-sass-official.
+```bash
+bower uninstall bootstrap
+bower install bootstrap-sass-official
+grunt wiredep
+```
+
+Uninstalling bootstrap and installing the bootstrap-sass-official bower component will cause the following changes.
+
+- bower.json
+  - Replaces bootstrap with bootstrap-sass-official.
+- index.html changes
+  - Wiredep removes the link element with bootstrap.css from bootstrap.
+  - Wiredep replaces the bootstrap.js script element with the included scripts from bootstrap-sass-official.
+- karma.conf.js changes
+  - Wiredep replaces the bootstrap.js script element with the included scripts from bootstrap-sass-official.
+
+### Merge changes over from a freshly generated Yeoman AngularJS app.
+
+### Convert over to a solution that does not depend on Ruby and Compass.
+
+[Libsass](http://sass-lang.com/libsass)
+`brew install libsass`
+[node-sass](https://www.npmjs.com/package/node-sass)
+
 ## Documentation and Reference
 - [Node.js](https://nodejs.org/en/docs/)
 - [npm](https://docs.npmjs.com/)
@@ -163,8 +203,21 @@ Add grunt-connect-proxy configuration to the Gruntfile to proxy api urls.
 - [PhantomJS](http://phantomjs.org/documentation/)
 - [Jasmine](http://jasmine.github.io/2.4/introduction.html)
 - [Protractor](http://www.protractortest.org/#/)
+
 - [grunt-contrib-watch](https://github.com/gruntjs/grunt-contrib-watch)
 - [grunt-connect-proxy](https://github.com/drewzboto/grunt-connect-proxy)
+- [grunt-wiredep](https://www.npmjs.com/package/grunt-wiredep)
+- [grunt-postcss](https://www.npmjs.com/package/grunt-postcss)
+- [grunt-ng-annotate](https://www.npmjs.com/package/grunt-ng-annotate)
+- [grunt-usemin](https://www.npmjs.com/package/grunt-usemin)
+- [grunt-google-cdn](https://www.npmjs.com/package/grunt-google-cdnify)
+- [grunt-angular-templates](https://www.npmjs.com/package/grunt-angular-templates)
+
+- [wiredep](https://github.com/taptapship/wiredep#configuration)
+- [postcss](https://www.npmjs.com/package/postcss)
+- [ng-annotate](https://www.npmjs.com/package/ng-annotate)
+- [html-minifier](https://www.npmjs.com/package/html-minifier)
+
 - [JSHint](http://jshint.com/docs/)
 - [JSCS](http://jscs.info/overview)
 
